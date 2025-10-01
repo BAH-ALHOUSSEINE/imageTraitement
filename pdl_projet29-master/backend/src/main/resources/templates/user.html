@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>WELCOME USER</title>
+</head>
+<body>
+	<h1 style="width: 50%; margin: auto">BIENVENUE SUR  PLAGE UTILISATEUR</h1>
+	<p>Votre nom est : <span><span sec:authentication="principal.name"></span></span></p>
+	<p>Votre prenom est : <span sec:authentication="principal.lastName"></span></p>
+	<p>Votre nom d'utisateur est :  <span sec:authentication="principal.userName"></span></p>
+	<p> Vous avez le role : <span sec:authentication="principal.authorities"></span></p>
+	<p> Votre email est le suivant : <span sec:authentication="principal.email"></span></p>
+	<br/>
+	
+	<p><strong>Ne vous inquietez sur pas, le site est en cours de developpement , vous aurez bientot acces a de nouvelle fonctionnalité</strong></p>
+     <a th:href="@{/logout}">
+	<button type="button">LOGOUT</button>
+	</a>
+</body>
+</html>
